@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOPUPMLBBYUKS - Top Up Mobile Legends Terpercaya</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Auth Container -->
+    <div id="authContainer" class="auth-container">
+      <div class="auth-box">
+        <h2 class="auth-title" id="authTitle">Sign in</h2>
+        <form id="authForm" autocomplete="off" novalidate>
+          <div id="nameField" class="form-group" style="display: none">
+            <label for="name">Nama</label>
+            <input type="text" id="name" name="name" required />
+            <div id="nameError" class="error"></div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+            <div id="emailError" class="error"></div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+            <div id="passwordError" class="error"></div>
+          </div>
+          <div
+            id="confirmPasswordField"
+            class="form-group"
+            style="display: none"
+          >
+            <label for="confirmPassword">Konfirmasi Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              required
+            />
+            <div id="confirmPasswordError" class="error"></div>
+          </div>
+          <button type="submit" class="btn" id="authSubmit">Sign in</button>
+        </form>
+        <div class="auth-switch">
+          <span id="authSwitchText">Belum punya akun?</span>
+          <a href="#" id="authSwitchLink">Sign up</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="appContainer" class="app-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo">
+          <img
+            src="img/Logo pt.png"
+            width="120px"
+            height="120px"
+            alt="Logo"
+            class="logo"
+          />
+          Top Up Mobile Legends Terpercaya
+        </div>
+        <button class="logout-btn" onclick="logout()">Log Out</button>
+      </header>
+
+      <!-- Navigation -->
+      <nav class="navigation">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#" class="nav-link active" onclick="showPage('home')"
+              >Beranda</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" onclick="showPage('topup')">Top Up</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" onclick="showPage('history')"
+              >Riwayat Transaksi</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" onclick="showPage('about')"
+              >Tentang Kami</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Content -->
+      <main class="content">
+        <!-- Home Page -->
+        <div id="homePage" class="page active">
+          <div class="slider-container">
+            <div class="slider">
+              <div class="slide active">
+                <img src="img/slide beranda 1.png" alt="Slide 1" class="slide-img"/>
+              </div>
+              <div class="slide">
+                <img src="img/slide beranda 2.png" width="100%" height="100%" alt="Slide 2" class "slide-img"/>
+              </div>
+              <div class="slide">
+                <img src="img/slide beranda 3.png" alt="Slide 3" class="slide-img"/>
+              </div>
+            </div>
+            <div class="slider-nav">
+              <div class="slider-dot active" onclick="currentSlide(1)"></div>
+              <div class="slider-dot" onclick="currentSlide(2)"></div>
+              <div class="slider-dot" onclick="currentSlide(3)"></div>
+            </div>
+          </div>
+          <div class="news-section">
+            <h2 class="news-title">Berita Terkini</h2>
+            <div class="news-grid">
+              <div class="news-card">
+                <img src="img/news1.png" alt="News 1" class="news-image">
+                <div class="news-content">
+                  <div class="news-description">
+                    Kolaborasi MLBB X Naruto telah hadir! Dapatkan
+                    skin karakter Naruto dan Sakura dalam event spesial
+                  </div>
+                </div>
+              </div>
+              <div class="news-card">
+                <img src="img/topup.png" alt="News 2" class="news-image">
+                <div class="news-content">
+                  <div class="news-description">
+                    Cara top up MLBB yang mudah dan cepat! Dapatkan
+                    berbagai promo menarik setiap harinya.
+                  </div>
+                </div>
+              </div>
+              <div class="news-card">
+                <img src="img/nanatod.png" alt="News 3" class="news-image">
+                <div class="news-content">
+                  <div class="news-description">
+                    1000 alasan mengapa jangan pernah pick hero Nana
+                    di ranked match! Simak tips dan trik bermain
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Up Page -->
+        <div id="topupPage" class="page">
+          <h2 style="text-align: center; margin-bottom: 30px; color: #4a5568">
+            Pilih Produk Top Up
+          </h2>
+
+          <div class="product-grid">
+            <div
+              class="product-card"
+              onclick="selectProduct('twilight', 'Twilight Pass', 50000)"
+            >
+              <div class="product-name">Twilight Pass</div>
+              <div class="product-price">Rp 50.000</div>
+            </div>
+            <div
+              class="product-card"
+              onclick="selectProduct('weekly', 'Weekly Diamonds Pass', 75000)"
+            >
+              <div class="product-name">Weekly Diamonds Pass</div>
+              <div class="product-price">Rp 75.000</div>
+            </div>
+            <div
+              class="product-card"
+              onclick="selectProduct('diamonds', 'Diamonds', 100000)"
+            >
+              <div class="product-name">Diamonds</div>
+              <div class="product-price">Rp 100.000</div>
+            </div>
+          </div>
+
+          <div class="topup-form">
+  <h3 style="margin-bottom: 20px; color: #4a5568">Data Pemain</h3>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="userId">User ID</label>
+      <input type="text" id="userId" required />
+    </div>
+    <div class="form-group">
+      <label for="zoneId">Zone ID</label>
+      <input type="text" id="zoneId" required />
+    </div>
+    <div class="form-group">
+      <label for="jumlah">Jumlah</label>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <button type="button" onclick="decrease()" style="background: none; border: none;">
+          <img src="minus.svg" alt="Minus" style="width: 24px; height: 24px;" />
+        </button>
+        <input type="tel" id="jumlah" value="1" required style="width: 60px; text-align: center;" />
+        <button type="button" onclick="increase()" style="background: none; border: none;">
+          <img src="plus.svg" alt="Plus" style="width: 24px; height: 24px;" />
+        </button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="whatsapp">Nomor WhatsApp</label>
+      <input type="tel" id="whatsapp" required />
+    </div>
+  </div>
+  <button class="btn" onclick="proceedToPayment()">Konfirmasi</button>
+</div>
+        </div>
+        
+
+        <!-- Payment Page -->
+        <div id="paymentPage" class="page">
+          <h2 style="text-align: center; margin-bottom: 30px; color: #4a5568">
+            Pilih Metode Pembayaran
+          </h2>
+
+          <div class="payment-methods">
+            <div class="payment-category">
+              <h3>Bank Transfer</h3>
+              <div class="payment-options">
+                <div class="payment-option" onclick="selectPayment('BCA')">
+                  <img src="img/BCA.jpg" alt="BCA" style="width: 50px; height: 50px;" />
+                </div>
+                <div class="payment-option" onclick="selectPayment('BRI')">
+                 <img src="img/bri.png" alt="BRI" style="width: 50px; height: 50px;" />
+                </div>
+                <div class="payment-option" onclick="selectPayment('MANDIRI')">
+                 <img src="img/MANDIRI.png" alt="MANDIRI" style="width: 50px; height: 50px;" />
+                </div>
+              </div>
+            </div>
+
+            <div class="payment-category">
+              <h3>E-Wallet</h3>
+              <div class="payment-options">
+                <div class="payment-option" onclick="selectPayment('GOPAY')">
+                  <img src="img/GOPAY.png" alt="GOPAY" style="width: 50px; height: 50px;" />
+                </div>
+                <div class="payment-option" onclick="selectPayment('DANA')">
+                  <img src="img/DANA.png" alt="DANA" style="width: 50px; height: 50px;" />
+                </div>
+                <div
+                  class="payment-option"
+                  onclick="selectPayment('SHOPEEPAY')"
+                >
+                  <img src="img/Shoopepay.png" alt="Shoopepay" style="width: 50px; height: 50px;" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-buttons">
+            <button class="btn btn-secondary" onclick="showPage('topup')">
+              Batal
+            </button>
+            <button class="btn" onclick="showOrderConfirmation()">
+              Konfirmasi
+            </button>
+          </div>
+        </div>
+
+        <!-- History Page -->
+        <!-- Riwayat Transaksi -->
+ <div id="historyPage" class="page">
+          <h2 style="text-align: center; margin-bottom: 30px; color: #4a5568">
+            Riwayat Transaksi
+          </h2>
+          <div id="historyContent">
+            <div style="text-align: center; padding: 50px; color: #718096">
+              <div style="font-size: 48px; margin-bottom: 20px">📝</div>
+              <p>Belum ada transaksi, top up dulu yuk!</p>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- About Page -->
+        <div id="aboutPage" class="page">
+          <h2 style="text-align: center; margin-bottom: 30px; color: #4a5568">
+            Tentang Kami
+          </h2>
+
+          <div style="margin-bottom: 30px">
+            <h3 style="color: #667eea; margin-bottom: 15px">
+              Profil Singkat Perusahaan
+            </h3>
+            <p style="color: #718096; line-height: 1.6">
+             TOPUPMLBBYUKS hadir sebagai solusi top up Mobile Legends yang cepat, aman, dan terpercaya. Kami telah dipercaya oleh jutaan pemain di seluruh Indonesia, mulai dari solo player sampai squad elite!
+<p style="color: #718096; line-height: 1.6">
+Kami bukan sekadar platform top up. Kami bagian dari perjalanan game-mu menuju kemenangan!</p>
+            </p>
+          </div>
+
+          <div style="margin-bottom: 30px">
+            <h3 style="color: #667eea; margin-bottom: 15px">Visi</h3>
+            <p style="color: #718096; line-height: 1.6">
+              Menjadi sahabat terbaik para gamers Indonesia dalam urusan top up game, dengan layanan yang cepat, aman, dan tanpa ribet.
+            </p>
+          </div>
+
+          <div>
+            <h3 style="color: #667eea; margin-bottom: 15px">Misi</h3>
+            <ul style="color: #718096; line-height: 1.6; padding-left: 20px">
+              <li>Menyediakan layanan top up yang super cepat & anti ribet</li>
+              <li>Menjamin keamanan dan privasi setiap transaksi</li>
+              <li>Support online 24/7 , Kamu chat, kami respon!</li>
+              <li>Harga ramah di kantong gamer</li>
+              <li>Inovasi tanpa henti untuk pengalaman terbaik pelanggan</li>
+            </ul>
+          </div>
+        </div>
+      <!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Butuh Bantuan?</h3>
+      <a
+        href="https://wa.me/6286577987599"
+        class="wa-button"
+        target="_blank"
+      >
+        <img src="img/wa.png" alt="WhatsApp Icon" class="wa-icon-img" />
+        <span class="wa-text">Hubungi kami</span>
+      </a>
+    </div>
+
+    <!-- Bagian Sosial Media dipusatkan -->
+<div class="footer-section full-width-center">
+  <h3>Ikuti Media Sosial Kami</h3>
+  <div class="social-icons">
+    <a href="https://x.com/TYuks73087" class="social-icon" target="_blank" rel="noopener noreferrer">
+      <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/twitterx--v1.png" alt="Twitter X"/>
+    </a>
+    <a href="https://www.instagram.com/mrbeast?igsh=ZDRodGw0NjJxYmx6" class="social-icon" target="_blank" rel="noopener noreferrer">
+      <img width="48" height="48" src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram"/>
+    </a>
+    <a href="https://www.facebook.com/share/1YSr7ct2H5/" class="social-icon" target="_blank" rel="noopener noreferrer">
+      <img width="48" height="48" src="https://img.icons8.com/fluency/48/facebook-circled.png" alt="Facebook"/>
+    </a>
+  </div>
+</div>
+  <div class="footer-bottom full-width-center">
+    <p>&copy; TOPUPMLBBYUKS</p>
+  </div>
+</footer>
+
+
+    <!-- Modals -->
+    <div id="orderModal" class="modal">
+      <div class="modal-content">
+        <h3 class="modal-title">Detail Pesanan</h3>
+        <div class="order-details" id="orderDetails">
+          <!-- Order details will be populated here -->
+        </div>
+        <div class="payment-buttons">
+          <button class="btn btn-secondary" onclick="closeModal()">
+            Batal
+          </button>
+          <button class="btn" onclick="processPayment()">Bayar Sekarang</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="successModal" class="modal">
+      <div class="modal-content">
+        <h3 class="modal-title">Pembayaran Sukses</h3>
+        <div style="text-align: center; padding: 20px">
+          <div style="font-size: 48px; margin-bottom: 20px">✅</div>
+          <p style="font-size: 18px; color: #38a169; margin-bottom: 20px">
+            Terima Kasih!
+          </p>
+          <p style="color: #718096">Transaksi Anda telah berhasil diproses.</p>
+        </div>
+        <div class="payment-buttons">
+          <button class="btn btn-secondary" onclick="goToHome()">
+            Kembali ke Beranda
+          </button>
+          <button class="btn" onclick="goToMLBB()">Lanjut ke MLBB</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
